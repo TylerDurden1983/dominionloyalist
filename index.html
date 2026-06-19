@@ -87,7 +87,44 @@
             padding: 5rem 2rem 4rem;
         }
 
-        .hero-inner { max-width: 700px; margin: 0 auto; }
+        .hero-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .hero-text { flex: 1; min-width: 0; }
+
+        .hero-shield {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-shield img {
+            width: 240px;
+            height: auto;
+            filter: drop-shadow(0 6px 24px rgba(0,0,0,0.22));
+            transition: filter 0.3s ease;
+        }
+
+        .hero-shield img:hover {
+            filter: drop-shadow(0 10px 32px rgba(0,0,0,0.32));
+        }
+
+        .hero-shield-caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted-light);
+            text-align: center;
+        }
 
         .hero-eyebrow {
             font-family: 'Inter', sans-serif;
@@ -115,7 +152,6 @@
         .hero-body {
             font-size: 1.2rem;
             color: var(--ink-light);
-            max-width: 580px;
             line-height: 1.8;
         }
 
@@ -444,6 +480,18 @@
         }
 
         /* ── RESPONSIVE ── */
+        @media (max-width: 720px) {
+            .hero-inner {
+                flex-direction: column-reverse;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-shield img { width: 170px; }
+
+            .hero-body { margin: 0 auto; }
+        }
+
         @media (max-width: 640px) {
             .paper-card { flex-direction: column; }
 
@@ -478,14 +526,20 @@
 <!-- ── HERO ── -->
 <section class="hero">
     <div class="hero-inner">
-        <p class="hero-eyebrow">Constitutional Theory &amp; the Westminster Tradition</p>
-        <h1>On the <em>Constitution</em><br>of the Dominion</h1>
-        <p class="hero-body">
-            A repository of essays, papers, and legal commentary in defence of
-            the constitutional order of Canada — its Crown, its Parliament, and
-            the unwritten principles that have sustained responsible government
-            since Confederation.
-        </p>
+        <div class="hero-text">
+            <p class="hero-eyebrow">Constitutional Theory &amp; the Westminster Tradition</p>
+            <h1>On the <em>Constitution</em><br>of the Dominion</h1>
+            <p class="hero-body">
+                A repository of essays, papers, and legal commentary in defence of
+                the constitutional order of Canada — its Crown, its Parliament, and
+                the unwritten principles that have sustained responsible government
+                since Confederation.
+            </p>
+        </div>
+        <div class="hero-shield">
+            <img src="public/Canadian%20Shield.png" alt="Arms of Canada — Canadian Shield">
+            <p class="hero-shield-caption">Arms of Canada</p>
+        </div>
     </div>
 </section>
 
