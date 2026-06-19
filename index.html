@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dominion Loyalist — Constitutional Theory</title>
+    <meta name="description" content="A repository of essays and papers in defence of the constitutional order of Canada — its Crown, its Parliament, and the Westminster tradition.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --parchment:      #F5F0E6;
+            --parchment-dark: #EDE7D9;
+            --ink:            #1C1917;
+            --ink-light:      #44403C;
+            --burgundy:       #7B2D3E;
+            --burgundy-light: #9B3D50;
+            --border:         #C8B89A;
+            --border-light:   #DDD0BC;
+            --muted:          #78716C;
+            --muted-light:    #A8A29E;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--parchment);
+            color: var(--ink);
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background-color: var(--ink);
+            border-bottom: 3px solid var(--burgundy);
+            padding: 0 2rem;
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+        }
+
+        .site-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--parchment);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+
+        .site-title span { color: var(--burgundy-light); }
+
+        nav { display: flex; gap: 2rem; }
+
+        nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--parchment); }
+
+        /* ── HERO ── */
+        .hero {
+            border-bottom: 1px solid var(--border);
+            padding: 5rem 2rem 4rem;
+        }
+
+        .hero-inner { max-width: 700px; margin: 0 auto; }
+
+        .hero-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--burgundy);
+        }
+
+        .hero-body {
+            font-size: 1.2rem;
+            color: var(--ink-light);
+            max-width: 580px;
+            line-height: 1.8;
+        }
+
+        /* ── DIVIDER ── */
+        .ornamental-divider {
+            text-align: center;
+            color: var(--border);
+            font-size: 1.1rem;
+            letter-spacing: 0.6em;
+            padding: 2.5rem 0;
+        }
+
+        /* ── PAPERS SECTION ── */
+        .papers { padding: 0 2rem 6rem; }
+
+        .papers-inner { max-width: 900px; margin: 0 auto; }
+
+        .section-heading {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* ── PAPER CARD ── */
+        .paper-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--burgundy);
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            transition: box-shadow 0.15s;
+        }
+
+        .paper-card:hover {
+            border-color: var(--border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .paper-meta { flex: 1; }
+
+        .paper-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--ink);
+            margin-bottom: 0.4rem;
+        }
+
+        .paper-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .paper-abstract {
+            font-size: 1rem;
+            color: var(--ink-light);
+            line-height: 1.65;
+        }
+
+        .paper-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1.15rem;
+            border: 1px solid;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            transition: all 0.15s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--burgundy);
+            color: white;
+            border-color: var(--burgundy);
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-light);
+            border-color: var(--burgundy-light);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ink);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover { border-color: var(--ink-light); }
+
+        /* ── FORTHCOMING PLACEHOLDER ── */
+        .forthcoming {
+            text-align: center;
+            padding: 4rem 2rem;
+            border: 1px dashed var(--border);
+            color: var(--ink-light);
+        }
+
+        .forthcoming-ornament {
+            font-size: 1.75rem;
+            color: var(--border);
+            margin-bottom: 1.25rem;
+        }
+
+        .forthcoming p { font-style: italic; font-size: 1.2rem; }
+
+        .forthcoming-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted-light);
+            margin-top: 0.6rem;
+            font-style: normal;
+        }
+
+        /* ── MODAL ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 25, 23, 0.72);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.open { display: flex; }
+
+        .modal {
+            background: var(--parchment);
+            border: 1px solid var(--border);
+            max-width: 840px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.3;
+        }
+
+        .modal-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink-light);
+            margin-top: 0.25rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 1.5rem;
+            line-height: 1;
+            padding: 0.2rem 0.4rem;
+            flex-shrink: 0;
+            transition: color 0.15s;
+        }
+
+        .modal-close:hover { color: var(--ink); }
+
+        .modal-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-light);
+            padding: 0 2rem;
+            flex-shrink: 0;
+        }
+
+        .modal-tab {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.75rem 0;
+            margin-right: 2rem;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            color: var(--muted);
+            background: none;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .modal-tab.active {
+            color: var(--burgundy);
+            border-bottom-color: var(--burgundy);
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            flex: 1;
+            padding: 0;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 65vh;
+            border: none;
+            display: block;
+        }
+
+        .modal-about {
+            padding: 2rem;
+            display: none;
+        }
+
+        .modal-about p {
+            color: var(--ink-light);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .modal-about a {
+            color: var(--burgundy);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .modal-about .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ── ABOUT SECTION ── */
+        .about {
+            background: var(--parchment-dark);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 4rem 2rem;
+        }
+
+        .about-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+        }
+
+        .about p {
+            color: var(--ink-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about p:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--ink);
+            border-top: 3px solid var(--burgundy);
+            padding: 2.25rem 2rem;
+            text-align: center;
+        }
+
+        .footer-inner { max-width: 900px; margin: 0 auto; }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        footer a { color: var(--muted-light); text-decoration: none; }
+        footer a:hover { color: var(--parchment); }
+
+        footer .footer-divider {
+            color: var(--muted);
+            margin: 0 0.5rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 640px) {
+            .paper-card { flex-direction: column; }
+
+            .paper-actions {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .btn { flex: 1; }
+
+            nav { gap: 1.25rem; }
+
+            .hero { padding: 3rem 1.5rem 2.5rem; }
+
+            .papers { padding: 0 1.5rem 4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+    <div class="header-inner">
+        <a href="/" class="site-title">Dominion <span>Loyalist</span></a>
+        <nav>
+            <a href="#papers">Papers</a>
+            <a href="#about">About</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="hero">
+    <div class="hero-inner">
+        <p class="hero-eyebrow">Constitutional Theory &amp; the Westminster Tradition</p>
+        <h1>On the <em>Constitution</em><br>of the Dominion</h1>
+        <p class="hero-body">
+            A repository of essays, papers, and legal commentary in defence of
+            the constitutional order of Canada — its Crown, its Parliament, and
+            the unwritten principles that have sustained responsible government
+            since Confederation.
+        </p>
+    </div>
+</section>
+
+<div class="ornamental-divider" aria-hidden="true">&#10022; &nbsp; &#10022; &nbsp; &#10022;</div>
+
+<!-- ── PAPERS ── -->
+<section class="papers" id="papers">
+    <div class="papers-inner">
+        <p class="section-heading">Papers &amp; Essays</p>
+
+        <div id="papers-list"></div>
+
+        <div class="forthcoming" id="forthcoming-notice">
+            <div class="forthcoming-ornament" aria-hidden="true">&#10070;</div>
+            <p>Further papers forthcoming.</p>
+            <p class="forthcoming-sub">This repository is presently in preparation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+    <div class="about-inner">
+        <h2>About this Repository</h2>
+        <p>
+            Dominion Loyalist publishes original scholarship on the constitutional
+            foundations of Canada — the nature of the Crown, the powers of Parliament,
+            the role of vice-regal prerogative, and the inheritance of the common law
+            and Westminster tradition.
+        </p>
+        <p>
+            The papers collected here are offered in the conviction that the Canadian
+            constitution is not a mere statute but a living inheritance — one that
+            demands careful study and vigorous defence.
+        </p>
+    </div>
+</section>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+        <div class="modal-header">
+            <div>
+                <div class="modal-title" id="modal-title"></div>
+                <div class="modal-author" id="modal-author"></div>
+            </div>
+            <button class="modal-close" id="modal-close" aria-label="Close reader">&times;</button>
+        </div>
+        <div class="modal-tabs">
+            <button class="modal-tab active" data-tab="read">Read Online</button>
+            <button class="modal-tab" data-tab="about">Details &amp; Download</button>
+        </div>
+        <div class="modal-body">
+            <iframe id="modal-frame" title="Paper reader" allowfullscreen></iframe>
+            <div class="modal-about" id="modal-about">
+                <p id="modal-abstract"></p>
+                <p id="modal-download-wrap"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-inner">
+        <p>
+            Dominion Loyalist
+            <span class="footer-divider">&mdash;</span>
+            <a href="https://dominionloyalist.ca">dominionloyalist.ca</a>
+        </p>
+        <p style="margin-top:0.4rem;">Published in the Dominion of Canada</p>
+    </div>
+</footer>
+
+<script>
+    /*
+     * To add a paper, append an object to the `papers` array below.
+     *
+     * Fields:
+     *   title    {string}  — full paper title
+     *   author   {string}  — author name(s)
+     *   year     {string}  — publication year (optional)
+     *   tag      {string}  — category label shown above the title (optional)
+     *   abstract {string}  — short abstract shown on the card and in modal
+     *   htmlUrl  {string}  — URL for the inline reader iframe (optional)
+     *   pdfUrl   {string}  — URL for PDF download link (optional)
+     *
+     * The "Read online" button appears only when htmlUrl is set.
+     * The "Download PDF" button appears only when pdfUrl is set.
+     */
+    const papers = [
+        // Example (uncomment to test):
+        // {
+        //     title:    "The Reserve Powers of the Crown in Canada",
+        //     author:   "A. N. Author",
+        //     year:     "2026",
+        //     tag:      "Vice-Regal Prerogative",
+        //     abstract: "An examination of the circumstances in which the Governor General may lawfully refuse royal assent or decline to follow ministerial advice.",
+        //     htmlUrl:  "papers/reserve-powers/index.html",
+        //     pdfUrl:   "papers/reserve-powers/reserve-powers.pdf",
+        // },
+    ];
+
+    /* ── Render paper cards ── */
+    function renderPapers() {
+        const list   = document.getElementById('papers-list');
+        const notice = document.getElementById('forthcoming-notice');
+
+        if (papers.length === 0) {
+            list.innerHTML    = '';
+            notice.style.display = 'block';
+            return;
+        }
+
+        notice.style.display = 'none';
+        list.innerHTML = papers.map((p, i) => `
+            <div class="paper-card">
+                <div class="paper-meta">
+                    <p class="paper-tag">${escHtml(p.tag || 'Constitutional Theory')}</p>
+                    <p class="paper-title">${escHtml(p.title)}</p>
+                    <p class="paper-author">${escHtml(p.author)}${p.year ? ' &mdash; ' + escHtml(p.year) : ''}</p>
+                    <p class="paper-abstract">${escHtml(p.abstract || '')}</p>
+                </div>
+                <div class="paper-actions">
+                    ${p.htmlUrl ? `<button class="btn btn-primary" onclick="openModal(${i})">Read online</button>` : ''}
+                    ${p.pdfUrl  ? `<a class="btn btn-secondary" href="${escAttr(p.pdfUrl)}" target="_blank" rel="noopener noreferrer">Download PDF</a>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    /* ── Modal ── */
+    function openModal(index) {
+        const p = papers[index];
+        document.getElementById('modal-title').textContent  = p.title;
+        document.getElementById('modal-author').textContent = p.author + (p.year ? ' — ' + p.year : '');
+        document.getElementById('modal-abstract').textContent = p.abstract || '';
+        document.getElementById('modal-download-wrap').innerHTML = p.pdfUrl
+            ? `<a class="download-link btn btn-secondary" href="${escAttr(p.pdfUrl)}" target="_blank" rel="noopener noreferrer">Download PDF</a>`
+            : '';
+
+        if (p.htmlUrl) {
+            document.getElementById('modal-frame').src = p.htmlUrl;
+            switchTab('read');
+        } else {
+            switchTab('about');
+        }
+
+        document.getElementById('modal-overlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('modal-overlay').classList.remove('open');
+        document.getElementById('modal-frame').src = '';
+        document.body.style.overflow = '';
+    }
+
+    function switchTab(name) {
+        document.querySelectorAll('.modal-tab').forEach(t => {
+            t.classList.toggle('active', t.dataset.tab === name);
+        });
+        document.getElementById('modal-frame').style.display   = name === 'read'  ? 'block' : 'none';
+        document.getElementById('modal-about').style.display   = name === 'about' ? 'block' : 'none';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+
+    document.getElementById('modal-overlay').addEventListener('click', function (e) {
+        if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    document.querySelectorAll('.modal-tab').forEach(tab => {
+        tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+    });
+
+    /* ── Utilities ── */
+    function escHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function escAttr(str) {
+        return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    renderPapers();
+</script>
+
+</body>
+</html>
