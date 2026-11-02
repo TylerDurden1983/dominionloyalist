@@ -426,6 +426,130 @@
             margin-top: 0.5rem;
         }
 
+        /* ── MEDIA SECTION ── */
+        .media { padding: 0 2rem 6rem; }
+
+        .media-inner { max-width: 900px; margin: 0 auto; }
+
+        .media-intro {
+            font-size: 1.05rem;
+            color: var(--ink-light);
+            margin: -0.75rem 0 2rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .video-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--burgundy);
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.15s;
+        }
+
+        .video-card:hover {
+            border-color: var(--border);
+            border-top-color: var(--burgundy);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .video-frame {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: var(--ink);
+            overflow: hidden;
+        }
+
+        .video-frame button {
+            all: unset;
+            position: absolute;
+            inset: 0;
+            cursor: pointer;
+        }
+
+        .video-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.2s;
+        }
+
+        .video-frame button:hover img { opacity: 0.88; }
+
+        .video-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 64px;
+            height: 64px;
+            margin: -32px 0 0 -32px;
+            border-radius: 50%;
+            background: rgba(28, 25, 23, 0.78);
+            border: 2px solid var(--parchment);
+            transition: background 0.15s;
+        }
+
+        .video-play::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 19px;
+            border-style: solid;
+            border-width: 13px 0 13px 21px;
+            border-color: transparent transparent transparent var(--parchment);
+        }
+
+        .video-frame button:hover .video-play,
+        .video-frame button:focus-visible .video-play { background: var(--burgundy); }
+
+        .video-duration {
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--parchment);
+            background: rgba(28, 25, 23, 0.8);
+            padding: 0.15rem 0.45rem;
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .video-body .paper-title { font-size: 1.2rem; }
+
+        .video-body .paper-abstract { font-size: 0.98rem; margin-bottom: 1.1rem; flex: 1; }
+
+        .video-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .media { padding: 0 1.5rem 4rem; }
+            .media-grid { grid-template-columns: 1fr; }
+        }
+
         /* ── PRINCIPLES SECTION ── */
         .principles {
             padding: 4rem 2rem 5rem;
@@ -553,6 +677,7 @@
         <a href="/" class="site-title">Dominion <span>Loyalist</span></a>
         <nav>
             <a href="#papers">Papers</a>
+            <a href="#media">Media</a>
             <a href="#principles">Principles</a>
             <a href="#about">About</a>
         </nav>
@@ -641,6 +766,15 @@
             <p>Further papers forthcoming.</p>
             <p class="forthcoming-sub">This repository is presently in preparation.</p>
         </div>
+    </div>
+</section>
+
+<!-- ── MEDIA ── -->
+<section class="media" id="media">
+    <div class="media-inner">
+        <p class="section-heading">Media</p>
+        <p class="media-intro">Animated videos on Canadian history, identity and governance. Each one has a written companion essay above, with its sources.</p>
+        <div class="media-grid" id="media-list"></div>
     </div>
 </section>
 
@@ -827,6 +961,66 @@
         //     pdfUrl:   "papers/reserve-powers/reserve-powers.pdf",
         // },
     ];
+
+    /*
+     * To add a video, add an object to the top of the `videos` array.
+     *   id       {string} YouTube video ID
+     *   title    {string}
+     *   tag      {string} label above the title
+     *   duration {string} shown on the thumbnail
+     *   summary  {string} one or two sentences
+     *   essay    {string} link to the companion essay (optional)
+     * The thumbnail comes from YouTube; the player only loads when clicked.
+     */
+    const videos = [
+        {
+            id:       "8GOv8Kwwwdg",
+            title:    "How Did We Get Here? The Story of the Canadian Economy",
+            tag:      "History",
+            duration: "27:24",
+            summary:  "From the cod of the Grand Banks to the tariffs of 2026: how Canada was built on staples, blessed again and again by good fortune and foresight, and hollowed out again and again.",
+            essay:    "papers/how-did-we-get-here/index.html",
+        },
+        {
+            id:       "_kkM83W_vbo",
+            title:    "What Is a Canadian?",
+            tag:      "History",
+            duration: "12:06",
+            summary:  "Before the modern immigration era, nearly every Canadian traced back to one small circle around the North Sea and the English Channel. How those cousins became a new people.",
+            essay:    "papers/what-is-a-canadian/index.html",
+        },
+    ];
+
+    function renderVideos() {
+        const list = document.getElementById('media-list');
+        if (!list) return;
+        list.innerHTML = videos.map(v => `
+            <article class="video-card">
+                <div class="video-frame" data-id="${v.id}">
+                    <button type="button" aria-label="Play: ${v.title}">
+                        <img src="public/media/${v.id}.jpg" alt="" loading="lazy">
+                        <span class="video-play" aria-hidden="true"></span>
+                        ${v.duration ? `<span class="video-duration">${v.duration}</span>` : ''}
+                    </button>
+                </div>
+                <div class="video-body">
+                    <p class="paper-tag">Video &middot; ${v.tag}</p>
+                    <p class="paper-title">${v.title}</p>
+                    <p class="paper-abstract">${v.summary}</p>
+                    <div class="video-links">
+                        ${v.essay ? `<a class="btn btn-primary" href="${v.essay}">Read the essay</a>` : ''}
+                        <a class="btn btn-secondary" href="https://youtu.be/${v.id}" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+                    </div>
+                </div>
+            </article>`).join('');
+        list.querySelectorAll('.video-frame button').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const frame = btn.parentElement, id = frame.dataset.id;
+                frame.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0" title="${btn.getAttribute('aria-label').replace('Play: ','')}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+            });
+        });
+    }
+    renderVideos();
 
     /* ── Render paper cards ── */
     function renderPapers() {
