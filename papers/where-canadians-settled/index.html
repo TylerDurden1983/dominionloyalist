@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Settled Where in Canada? &middot; Dominion Loyalist</title>
+<meta name="description" content="Four census maps, 1851, 1921, 1971 and 2021, showing where Canada&rsquo;s peoples actually settled, and why the old clusters still hold. The companion essay to the Dominion Loyalist video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --parchment:      #F5F0E6;
+        --parchment-dark: #EDE7D9;
+        --ink:            #1C1917;
+        --ink-light:      #44403C;
+        --burgundy:       #7B2D3E;
+        --burgundy-light: #9B3D50;
+        --border:         #C8B89A;
+        --border-light:   #DDD0BC;
+        --muted:          #78716C;
+        --muted-light:    #A8A29E;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+        background-color: var(--parchment);
+        color: var(--ink);
+        font-family: 'EB Garamond', Georgia, serif;
+        font-size: 1.15rem;
+        line-height: 1.75;
+    }
+
+    .paper-header {
+        background-color: var(--ink);
+        border-bottom: 3px solid var(--burgundy);
+        padding: 1.1rem 2rem;
+    }
+
+    .paper-header a {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted-light);
+        text-decoration: none;
+    }
+
+    .paper-header a:hover { color: var(--parchment); }
+
+    article {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 4rem 2rem 5rem;
+    }
+
+    .tag {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4.5vw, 2.75rem);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--ink-light);
+        margin-bottom: 1.75rem;
+    }
+
+    .byline {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .video {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: var(--ink);
+        border: 1px solid var(--border);
+        margin-bottom: 0.75rem;
+    }
+
+    .video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .video-caption {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 3rem;
+    }
+
+    .video-caption a, article a { color: var(--burgundy); }
+    .video-caption a:hover, article a:hover { color: var(--burgundy-light); }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 2.75rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--burgundy);
+        margin: 2rem 0 0.75rem;
+    }
+    p { margin-bottom: 1.15rem; color: var(--ink); }
+
+    .pull {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--burgundy);
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .sources {
+        margin-top: 3.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-light);
+        font-size: 1rem;
+        color: var(--ink-light);
+    }
+
+    .sources-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 0.75rem;
+    }
+
+    .sources ul { padding-left: 1.2rem; margin-bottom: 1.25rem; }
+    .sources li { margin-bottom: 0.4rem; }
+
+    @media (max-width: 640px) {
+        article { padding: 2.5rem 1.5rem 3.5rem; }
+    }
+
+    @media print {
+        .paper-header, .video, .video-caption { display: none; }
+        body { background: white; }
+        article { max-width: none; padding: 0 0.25in; }
+    }
+</style>
+</head>
+<body>
+
+<div class="paper-header">
+    <a href="../../index.html#papers" target="_top">&larr; Back to Dominion Loyalist</a>
+</div>
+
+<article>
+    <p class="tag">Video Essay &middot; History</p>
+    <h1>Who Settled Where in Canada?</h1>
+    <p class="subtitle">Four census maps, 170 years apart, and why the Ottawa Valley is still Irish</p>
+    <p class="byline">Dominion Loyalist &middot; November 2026</p>
+
+    <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/1AciqqAmstU" title="Who Settled Where in Canada? 170 Years of Census Maps" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">Watch the animated version on <a href="https://youtu.be/1AciqqAmstU" target="_blank" rel="noopener noreferrer">YouTube</a> (9 minutes). The maps carry most of the story there; the essay below follows the same path in writing.</p>
+
+    <p>Drive an hour up the Ottawa Valley from Parliament Hill and you will hear it: the twangy, Irish-sounding Valley accent, with the long, wide A, where &ldquo;hand&rdquo; becomes &ldquo;haaand.&rdquo; You can still catch a softer version in the city, in families that have been here for generations. Renfrew County is still, on paper, more Irish than anything else.</p>
+    <p>Nobody planned that. In the 1840s a lot of hungry people got off ships at Quebec City, followed the timber trade up the river, and stayed.</p>
+    <p>Canada is full of places like that. Waterloo was German before it was anything. Cape Breton spoke Gaelic into living memory. The Eastern Townships were settled by Americans. Chatham was a terminus of the Underground Railroad.</p>
+    <p>So instead of asking who came to Canada, this essay asks where they went. It uses four snapshots from the census, 1851, 1921, 1971 and 2021, drawn on the same map of census divisions, roughly the country&rsquo;s counties and districts.</p>
+
+    <h2>I. 1851: The Canadas</h2>
+    <p>The first map is the 1851 census of the Province of Canada: today&rsquo;s Ontario and Quebec, about 1.84 million people. The Maritimes counted themselves separately and the West belonged to the Hudson&rsquo;s Bay Company, so they stay blank.</p>
+    <p>There is one catch. In 1851 the census asked where you were born, not your origin. Most people in Canada West were born here, the children of Loyalists and earlier settlers, so the census simply calls them Canadian. The map instead colours each area by its French Canadians, or by its largest group born somewhere else. It shows where the newcomers were landing.</p>
+    <p>The St. Lawrence valley is solidly French, from the Ottawa River to the Gasp&eacute;, with almost no immigration from France after 1760. In Montreal, about two in three people were French Canadian.</p>
+    <p>Up the Ottawa, the map turns green. Around Bytown, today&rsquo;s Ottawa, 81 percent of the people born outside Canada were born in Ireland. The first of them came right after the War of 1812. Rather than ship disbanded soldiers home, Britain gave them land, and in 1818 three to four hundred men of the 99th Regiment, raised in Dublin as the 100th, founded Richmond, just southwest of Bytown. It was an Irish regiment with Anglo-Irish officers: the kind of people said to be too Irish for England and too English for Ireland.</p>
+    <p>Then came the flood during the famine. In 1847 alone, close to 100,000 people, most of them Irish, landed at Quebec. Many went up the valley to the timber shanties.</p>
+    <p>Peterborough is Irish too, and that one was planned. In 1825 the government shipped about 2,000 poor Irish from County Cork there under Peter Robinson, and the town carries his name.</p>
+    <p>Glengarry, in the far east of Canada West, is Scottish and Irish almost evenly, first settled by Loyalist Highlanders from New York. Waterloo County is German: Pennsylvania Mennonites came up by wagon after 1800, and Germans from Europe followed them. The town at the centre was called Berlin.</p>
+    <p>In Kent, around Chatham, the largest group of newcomers is Black, about one person in ten. Thousands came up the Underground Railroad, crossing at Detroit, and the American Fugitive Slave Act of 1850 sent more.</p>
+    <p>And in the Eastern Townships, around Stanstead and Coaticook, the largest group of newcomers was born in the United States: New Englanders drawn north by cheap land. Those towns had more Americans than French Canadians.</p>
+
+    <h2>II. 1921: The Country Fills In</h2>
+    <p>Seventy years later, the map has a West. Between 1896 and 1914 Ottawa advertised across Europe: 160 acres of prairie for a ten-dollar filing fee. In 1913 alone, about 400,000 people arrived.</p>
+    <p>By 1921 the census asks for your origin, traced through your father, so now everyone gets a colour. Nationally the British Isles are 55 percent (English 29, Scottish 13, Irish 13), French 28, and everyone else together about 17.</p>
+    <p>The map tells it differently. Pictou and Inverness in Nova Scotia are two thirds Scottish, descended from the <em>Hector</em>&rsquo;s Highlanders of 1773 and the clearances that followed. Lunenburg is 53 percent German, from the Foreign Protestants of 1753. Gloucester in New Brunswick is 85 percent French: Acadians who came back after the expulsion.</p>
+    <p>Eastern Ontario is an Irish belt. Leeds and Grenville is 44 percent Irish, Lanark 41, Peterborough 36. Ottawa is Irish 30, French 27. Waterloo is still 47 percent German, though Berlin had been renamed Kitchener in 1916, in the middle of the war.</p>
+    <p>The West is a quilt. East of Edmonton around Vegreville, and around Dauphin in Manitoba, Ukrainians are the largest group. Well over 100,000 Ukrainians came before 1914, settling in tight blocs to keep their church and their language. Around Gimli it is Icelanders and Ukrainians almost even. Around Winkler the census says Dutch, but these are German-speaking Mennonites who came from Russia in the 1870s on a promise of their own land and schools. Around Yorkton and Humboldt, German.</p>
+    <p>The cities are British. Toronto is 51 percent English. Winnipeg, Calgary and Vancouver have English and Scottish on top. Montreal is 61 percent French. And in Vancouver, Chinese and Japanese are about 8 percent, despite a head tax on Chinese arrivals that reached $500 a person in 1903.</p>
+
+    <h2>III. 1971: The Postwar Map</h2>
+    <p>By 1971 there are 21.6 million people, and the map looks redder. That is partly a quirk: the 1971 tables lump English, Irish, Scottish and Welsh into one column, so they merge into one colour. Together they are 44 percent, with French at 29 and German at 6.</p>
+    <p>Underneath, the 1921 quilt is still there. French Canada has spilled west across the Ottawa River: Prescott and Russell is 82 percent French, Cochrane 52, Sudbury 39. That is mining and lumber country that Quebec families moved to in the early 1900s. Around Yorkton, Ukrainians are 41 percent, more than in 1921.</p>
+    <p>Around Winkler, the Mennonites who were &ldquo;Dutch&rdquo; in 1921 are now &ldquo;German,&rdquo; at 44 percent. Same people, new label. In 1921, three years after the First World War, &ldquo;German&rdquo; was not an answer many people wanted to give.</p>
+    <p>The new colour is Italian. Roughly 450,000 Italians came between the end of the Second World War and the early 1970s, mostly to Toronto and Montreal, and built much of the postwar boom. Metro Toronto in 1971 is 12 percent Italian, second only to the British.</p>
+    <p>Then in 1967 Canada changed the rules. The points system dropped preferences by country and ranked immigrants on education, language and jobs. The 1971 map comes just before that change shows up.</p>
+
+    <h2>IV. 2021: And What Stays</h2>
+    <p>By 2021 there are 37 million people, and the census question has changed again. People can now list several origins, and many simply write &ldquo;Canadian.&rdquo; For this map each person is split evenly across the origins they gave, &ldquo;Canadian&rdquo; is left out, and mother tongue is used for French. The British Isles are split back into English, Scottish and Irish.</p>
+    <p>Newfoundland joined in 1949, and the Avalon Peninsula is English 40 percent, Irish 36: West Country fishermen and Irish from Waterford and Wexford, three centuries ago.</p>
+    <p>Most of the old map survives. Lanark and Renfrew are still Irish first. Inverness is still Scottish. Lunenburg and Waterloo are still German, barely. Yorkton is still Ukrainian. Quebec is French from end to end.</p>
+    <p>What is new is the ring around the big cities. Peel Region, which is Brampton and Mississauga, is 37 percent South Asian. York Region is 25 percent Chinese. Toronto itself has no group above 15 percent: South Asian 14, Chinese 11, Black 10. Greater Vancouver is 20 percent Chinese. Calgary and Halton are neck and neck between English and South Asian. And across the North, the largest group is Indigenous, from 12 percent in Winnipeg to 80 percent in Nunavut&rsquo;s Baffin region.</p>
+
+    <h2>The Pattern</h2>
+    <p>Across 170 years the pattern is the same. People settle in clusters, following a relative, a priest, a railway agent or a job, and the cluster holds for generations. A famine in Ireland in the 1840s still shows up in an Ottawa Valley census in 2021. The new map does not erase the old one. It sits on top of it.</p>
+    <p>The difference is speed. Each earlier wave took decades to settle in. Today about 400,000 people a year arrive, mostly into five or six city regions. Whether those regions become the next Waterloo or the next Ottawa Valley, places with their own long memory inside one country, is what the next map will show.</p>
+
+    <h2>A Note on Method</h2>
+    <p>The four censuses did not ask the same question, so the maps are not strictly comparable. 1851 records birthplace, so native-born English Canadians drop out and the map shows newcomers. 1921 records origin through the father, one origin per person. 1971 records origin too, but its published county tables merge the British Isles into one group. 2021 allows several origins per person, which this map shares out evenly, leaving out the &ldquo;Canadian&rdquo; response and using mother tongue for French. Each map colours a census division by its largest group, so a division at 30 percent and one at 90 percent can look alike. The broad picture holds across all four; the exact percentages should be read with those differences in mind.</p>
+
+    <div class="sources">
+        <p class="sources-label">Sources</p>
+        <ul>
+            <li><a href="https://github.com/jburnford/hgiscanada" target="_blank" rel="noopener noreferrer">HGIS Canada</a> (Burnford et al.): 1851 and 1921 census tables and historical census division boundaries</li>
+            <li>Statistics Canada, <em>1971 Census of Canada: Population, Ethnic Groups</em> (catalogue 92-774): ethnic origin by census division</li>
+            <li><a href="https://www12.statcan.gc.ca/census-recensement/2021/dp-pd/prof/index.cfm?Lang=E" target="_blank" rel="noopener noreferrer">Statistics Canada</a>, 2021 Census Profile (98-401-X2021004): ethnic or cultural origin and mother tongue by census division</li>
+            <li><a href="https://github.com/ashakadam22/Canada-Census-Divisions" target="_blank" rel="noopener noreferrer">Canada Census Divisions</a>: 2021 census division boundaries</li>
+            <li><a href="https://www.veterans.gc.ca/en/node/154061" target="_blank" rel="noopener noreferrer">Veterans Affairs Canada</a>: the military settlement at Richmond</li>
+            <li><a href="https://www.bytownmuseum.com/news/the-100th-regiment" target="_blank" rel="noopener noreferrer">Bytown Museum</a>: the 100th Regiment and the founding of Richmond</li>
+        </ul>
+        <p class="sources-label">Further reading</p>
+        <p>Who the Canadian people are, and where the idea of a Canadian came from, is the subject of <a href="../what-is-a-canadian/index.html">What Is a Canadian?</a> Why the Loyalists and their descendants built a different country from the one to the south is the subject of <a href="../why-is-canada-so-different/index.html">Why Is Canada So Different From America?</a> And how today&rsquo;s immigration numbers came about is the subject of <a href="../canada-was-warned/index.html">Canada Was Warned About Immigration. It Did It Anyway.</a></p>
+    </div>
+</article>
+
+</body>
+</html>
