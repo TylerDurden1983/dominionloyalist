@@ -1002,7 +1002,7 @@
      *   duration {string} shown on the thumbnail
      *   summary  {string} one or two sentences
      *   essay    {string} link to the companion essay (optional)
-     * The thumbnail is public/media/<id>.jpg (960x540); the player only loads when clicked.
+     * The thumbnail is public/media/<id>.jpg (960x540), falling back to YouTube's own thumbnail if that file is missing; the player only loads when clicked.
      */
     const videos = [
         {
@@ -1012,6 +1012,14 @@
             duration: "8:17",
             summary:  "Nanisivik was promised in 2007 and shut in 2026, $110 million later. Now Ottawa has a $40 billion plan for the North. What it buys, when it arrives, and the three holes still in the map: Churchill, the eastern gate, and soldiers who actually live there.",
             essay:    "papers/canadas-arctic/index.html",
+        },
+        {
+            id:       "1AciqqAmstU",
+            title:    "Who Settled Where in Canada?",
+            tag:      "History",
+            duration: "9:06",
+            summary:  "Four census maps, 1851, 1921, 1971 and 2021, on the same map. The Irish up the Ottawa Valley, the Germans of Waterloo, the Ukrainian blocs of the prairies, and the new rings around Toronto and Vancouver.",
+            essay:    "papers/where-canadians-settled/index.html",
         },
         {
             id:       "FaGY00OarcA",
@@ -1054,7 +1062,7 @@
             <article class="video-card">
                 <div class="video-frame" data-id="${v.id}">
                     <button type="button" aria-label="Play: ${v.title}">
-                        <img src="public/media/${v.id}.jpg" alt="" loading="lazy">
+                        <img src="public/media/${v.id}.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${v.id}/hqdefault.jpg'">
                         <span class="video-play" aria-hidden="true"></span>
                         ${v.duration ? `<span class="video-duration">${v.duration}</span>` : ''}
                     </button>
