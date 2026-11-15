@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your PM Has a Second Paycheque &middot; Dominion Loyalist</title>
+<meta name="description" content="Mark Carney still gets paid when Brookfield does well. How the conflict is managed, how often Brookfield shows up, and who is checking. The companion essay to the Dominion Loyalist video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --parchment:      #F5F0E6;
+        --parchment-dark: #EDE7D9;
+        --ink:            #1C1917;
+        --ink-light:      #44403C;
+        --burgundy:       #7B2D3E;
+        --burgundy-light: #9B3D50;
+        --border:         #C8B89A;
+        --border-light:   #DDD0BC;
+        --muted:          #78716C;
+        --muted-light:    #A8A29E;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+        background-color: var(--parchment);
+        color: var(--ink);
+        font-family: 'EB Garamond', Georgia, serif;
+        font-size: 1.15rem;
+        line-height: 1.75;
+    }
+
+    .paper-header {
+        background-color: var(--ink);
+        border-bottom: 3px solid var(--burgundy);
+        padding: 1.1rem 2rem;
+    }
+
+    .paper-header a {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted-light);
+        text-decoration: none;
+    }
+
+    .paper-header a:hover { color: var(--parchment); }
+
+    article {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 4rem 2rem 5rem;
+    }
+
+    .tag {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4.5vw, 2.75rem);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--ink-light);
+        margin-bottom: 1.75rem;
+    }
+
+    .byline {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .video {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: var(--ink);
+        border: 1px solid var(--border);
+        margin-bottom: 0.75rem;
+    }
+
+    .video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .video-caption {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 3rem;
+    }
+
+    .video-caption a, article a { color: var(--burgundy); }
+    .video-caption a:hover, article a:hover { color: var(--burgundy-light); }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 2.75rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--burgundy);
+        margin: 2rem 0 0.75rem;
+    }
+    p { margin-bottom: 1.15rem; color: var(--ink); }
+
+    .pull {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--burgundy);
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .sources {
+        margin-top: 3.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-light);
+        font-size: 1rem;
+        color: var(--ink-light);
+    }
+
+    .sources-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 0.75rem;
+    }
+
+    .sources ul { padding-left: 1.2rem; margin-bottom: 1.25rem; }
+    .sources li { margin-bottom: 0.4rem; }
+
+    @media (max-width: 640px) {
+        article { padding: 2.5rem 1.5rem 3.5rem; }
+    }
+
+    @media print {
+        .paper-header, .video, .video-caption { display: none; }
+        body { background: white; }
+        article { max-width: none; padding: 0 0.25in; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="paper-header">
+    <a href="../../index.html#papers" target="_top">&larr; Back to Dominion Loyalist</a>
+</div>
+
+<article>
+    <p class="tag">Video Essay &middot; Policy</p>
+    <h1>Your PM Has a Second Paycheque</h1>
+    <p class="subtitle">Mark Carney still gets paid when Brookfield does well. The rules say that&rsquo;s fine. That&rsquo;s the problem.</p>
+    <p class="byline">Dominion Loyalist &middot; November 2026</p>
+
+    <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/bsDnaQS85DA" title="Your PM Has a Second Paycheque" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">Watch the animated version on <a href="https://youtu.be/bsDnaQS85DA" target="_blank" rel="noopener noreferrer">YouTube</a> (7 minutes). The essay below follows the same path in writing, with a little more detail.</p>
+
+    <p>On November 12, 2026, Brookfield Corporation reported that its profit to shareholders for the third quarter was US$1.3 billion. A year earlier, the same quarter, it was $219 million. Six times bigger.</p>
+    <p>We should be straight about what that number is. Most of the jump is paper: fair-value gains on assets Brookfield already owned, plus a $2 billion non-cash gain its asset-management arm booked when it bought the rest of Oaktree. The cash the business earns grew about 15 percent, roughly what it grows most years, and most of it comes from clients outside Canada. Mark Carney did not make Brookfield a billion dollars by becoming Prime Minister.</p>
+    <p>But that was never the scandal. The scandal is the setup: a Prime Minister who still gets paid when one company does well, a company that touches almost everything his government does, and a referee for all of it who works for him. No smoking gun is needed. You only have to look at how it is built.</p>
+
+    <h2>I. The Second Paycheque</h2>
+    <p>Carney joined Brookfield in 2020 as vice-chair and head of transition investing. He co-ran its first Global Transition Fund, $15 billion, at the time the largest private net-zero fund in the world, and he chaired Brookfield Asset Management until January 16, 2025, the day he launched his run for the Liberal leadership.</p>
+    <p>He did not cash out. Brookfield&rsquo;s own filing showed he held options on 409,300 shares, worth about US$6.8 million at the end of 2024, along with roughly 41,000 deferred share units. He is also entitled to carried interest, a share of the profits, from that first transition fund, which matures in the 2030s.</p>
+    <p>When he became Prime Minister, all of it went into a blind trust. A blind trust hides day-to-day trading from the owner. It does not hide what went in. It is like sealing your lottery ticket in an envelope: you can no longer see it, but you still know your numbers.</p>
+    <p>In November 2025, MPs on the Commons ethics committee asked Brookfield&rsquo;s chief operating officer, Justin Beber, whether the value of those options and units rises when Brookfield&rsquo;s value rises, blind trust or not. His answer was &ldquo;Yes.&rdquo; He also said Carney could have sold, cashed out, settled or unwound them if he had chosen to, or if Parliament required it. He didn&rsquo;t.</p>
+    <p>A month later the Conflict of Interest and Ethics Commissioner, Konrad von Finckenstein, told the same committee: &ldquo;It is clear Mr. Carney&rsquo;s future compensation is tied to the success of Brookfield.&rdquo; That is not a critic&rsquo;s reading. That is the watchdog&rsquo;s.</p>
+    <h3>Fifteen minutes</h3>
+    <p>Compare the Prime Minister with Michael Sabia. Sabia is Clerk of the Privy Council, the most senior public servant in the country, and one of the two people who administer the Prime Minister&rsquo;s conflict screen. He is also a former Brookfield executive.</p>
+    <p>In September 2025, the Ethics Commissioner&rsquo;s office showed Sabia a list of his holdings with Brookfield on it. He told MPs he decided to sell &ldquo;15 or 30 minutes after I saw the name Brookfield on the list.&rdquo; The man guarding the door judged his own Brookfield shares a problem within half an hour. The man he is guarding still has his.</p>
+    <p>In fairness, the law did not require either of them to sell. A blind trust plus a screen is exactly what the Conflict of Interest Act asks of a public office holder. That is the point. The question is whether the legal minimum is enough when the person at the top has this much riding on one company.</p>
+
+    <h2>II. A Fence Around 5% of the Yard</h2>
+    <p>Instead of selling, Carney has a conflict screen: a list of companies. When a government decision involves one of them, he is supposed to leave the room and not even be told about it.</p>
+    <p>The published list has 103 entities on it. Brookfield&rsquo;s COO told Parliament the firm owns or operates about 2,000 companies. Roughly 95 percent of them are not named, and the Commissioner&rsquo;s office has said it does not hold the full list. That is not a wall. It is a fence around 5 percent of the yard.</p>
+    <p>Who decides when Carney leaves the room? The screen is administered by his own chief of staff and by the Clerk, both of whom serve at the Prime Minister&rsquo;s pleasure. The Commissioner advises and is notified; he does not sit in the room. Imagine your boss&rsquo;s conflicts being checked by your boss&rsquo;s assistant.</p>
+    <p>There is also a loophole. If a decision affects Brookfield only as part of a broad class, an industry or a general tax measure, Carney can take part. When the 2025 budget bill created new tax credits for small nuclear reactors, the screen&rsquo;s administrators treated it as a general measure. Brookfield co-owns Westinghouse, one of the largest reactor makers in the world. Asked whether Carney should sit out that vote, the Commissioner said he was not in a position to answer.</p>
+    <p>By June 2026, Carney had stepped back from at least 17 government discussions. You can read that as the screen working. You can also read it as a measure of how often Brookfield is in the room.</p>
+    <h3>How often Brookfield shows up</h3>
+    <p><strong>August 2024.</strong> Brookfield pitched Canada&rsquo;s largest pension funds on a $50 billion fund to invest in Canadian assets, with $10 billion of it to come from Ottawa. Brookfield&rsquo;s chair at the time was advising the Liberal leader: Mark Carney. (Brookfield&rsquo;s work on the fund predates his advisory role.)</p>
+    <p><strong>September 2026.</strong> The Maple Fund launched as a centrepiece of the Canada Investment Summit hosted by Prime Minister Carney, with CPP Investments as Brookfield&rsquo;s partner, up to $25 billion each. This version has no federal money, and CPP approves each deal through its own process. But nobody has said what fees Brookfield earns, or whether the Prime Minister&rsquo;s screen was applied to any of it.</p>
+    <p><strong>October 2026.</strong> Ottawa announced $2 billion for home retrofits, built around a new heat pump rebate. Enercare, which sells, rents and finances heat pumps and water heaters to about 1.4 million Canadian homes and businesses, is owned by Brookfield.</p>
+    <p><strong>November 2026.</strong> PSP Investments, the federal Crown corporation that invests the pensions of public servants, soldiers and Mounties, agreed to buy half of Enercare from Brookfield for about $1.6 billion.</p>
+    <p>Is any of that illegal? Not that anyone has shown. CPP and PSP are independent of cabinet by law and make their own investment calls, PSP has co-owned Enercare since 2018, and the heat pump program fulfils a 2025 campaign pledge. But the fair questions are real: what price PSP paid, whether the rebate was in the deal model, and whether anything touching Maple or Enercare went through the screen. If one company keeps landing deals like this, a list of 103 names does not protect anybody.</p>
+
+    <h2>III. Who&rsquo;s Watching the Watchdog?</h2>
+    <p>Parliament did look. Over months of hearings the Commons ethics committee heard from Brookfield, the Clerk, the chief of staff and the Commissioner. In April 2026 it tabled 20 recommendations. The central one: any Prime Minister should have to sell everything he controls within 60 days, because a blind trust does not constitute true divestment. It also recommended adding &ldquo;apparent conflict of interest&rdquo; to the Act and publishing the details of screens.</p>
+    <p>The Liberal members dissented. And ten days before that report was tabled, on April 13, 2026, the Liberals won a majority, not in a general election but through three by-elections after five opposition MPs had crossed the floor. With a majority, the government needs no one&rsquo;s permission. The law has not changed.</p>
+    <h3>How the referee works now</h3>
+    <p>The next story is not about Brookfield, and we want to be clear on that. A Conservative claim linking Brookfield to it turned out to rest on an industrial warehouse deal. But it shows how oversight works under the new majority.</p>
+    <p>In February 2026, Vancouver condo marketer Bob Rennie hosted &ldquo;An Evening with Mark Carney.&rdquo; According to the Elections Canada filing reported by Sam Cooper at The Bureau, 146 people paid up to $1,775 each, including at least 17 of British Columbia&rsquo;s leading developers and condo marketers. In June, Ottawa and B.C. announced a plan to buy more than 2,200 unsold, completed condos with public money and financing, about $1.45 billion in total. Carney says no developer asked for it, and that the province initiated it.</p>
+    <p>Maybe so. But months later there is still no published purchase price, no list of buildings and no rules on which developers get bought out. When opposition MPs moved on July 7 to call the host and the housing minister to explain, the Liberal majority on the committee shut down debate, five votes to four, without a hearing.</p>
+
+    <h2>The Honest Ledger</h2>
+    <p>Fair is fair. Carney followed the law as it is written. No watchdog has found that he broke it. Brookfield says no one there has discussed company business with him since he left. Some of his government&rsquo;s choices cut against Brookfield: its nuclear strategy leans heavily toward Canada&rsquo;s own CANDU reactors rather than Westinghouse. And forcing a sale has a cost of its own, since the law, not the holder, would pick the timing.</p>
+    <p>But &ldquo;legal&rdquo; is a low bar. The law is the problem, and fixing it is not hard:</p>
+    <p><strong>1. Sell or cash out within 60 days.</strong> A Prime Minister should not carry a stake in a company his government regulates and deals with. Parliament&rsquo;s own committee already recommended it.</p>
+    <p><strong>2. Let the ethics office run the screen.</strong> Not the Prime Minister&rsquo;s own staff.</p>
+    <p><strong>3. Publish the full list.</strong> Every company the screen is meant to cover, not 5 percent of them.</p>
+    <p><strong>4. Publish every recusal</strong> once the decision is made, and put &ldquo;apparent conflict of interest&rdquo; into the Act, so the test is what a reasonable person would see, not what can be proven.</p>
+    <p class="pull">Picture a Conservative Prime Minister with millions riding on an oil company, a screen run by his own chief of staff, and a majority that shuts down the committee asking questions. Would you accept that?</p>
+    <p>If the answer is no, then this was never about Mark Carney. It is about the rules.</p>
+
+    <div class="sources">
+        <p class="sources-label">Sources</p>
+        <ul>
+            <li><a href="https://www.globenewswire.com/news-release/2026/11/12/3401431/0/en/brookfield-corporation-reports-16-increase-in-earnings.html" target="_blank" rel="noopener noreferrer">Brookfield Corporation</a>: third quarter 2026 results (November 12, 2026)</li>
+            <li><a href="https://www.globenewswire.com/news-release/2026/11/06/3397448/0/en/brookfield-asset-management-announces-strong-third-quarter-results.html" target="_blank" rel="noopener noreferrer">Brookfield Asset Management</a>: third quarter 2026 results, including the Oaktree gain (November 6, 2026)</li>
+            <li><a href="https://bnnbloomberg.ca/business/2025/03/18/carney-held-us68-million-of-brookfield-options-before-quitting-for-political-run" target="_blank" rel="noopener noreferrer">BNN Bloomberg</a>: Carney&rsquo;s Brookfield options</li>
+            <li><a href="https://openparliament.ca/committees/ethics/45-1/18/" target="_blank" rel="noopener noreferrer">Commons ethics committee</a>: Justin Beber testimony (November 24, 2025)</li>
+            <li><a href="https://openparliament.ca/committees/ethics/45-1/16/" target="_blank" rel="noopener noreferrer">Commons ethics committee</a>: Michael Sabia testimony (November 19, 2025)</li>
+            <li><a href="https://openparliament.ca/committees/ethics/45-1/22/" target="_blank" rel="noopener noreferrer">Commons ethics committee</a>: Ethics Commissioner testimony (December 8, 2025)</li>
+            <li><a href="https://www.ctvnews.ca/politics/article/carneys-ethics-filing-reveals-details-of-conflict-of-interest-screen-on-brookfield/" target="_blank" rel="noopener noreferrer">CTV News / The Canadian Press</a>: details of the conflict screen</li>
+            <li><a href="https://thelogic.co/briefing/carney-abstained-from-at-least-17-government-deliberations-over-potential-conflicts-of-interest/" target="_blank" rel="noopener noreferrer">The Logic</a>: at least 17 abstentions</li>
+            <li><a href="https://publications.gc.ca/collections/collection_2026/parl/xc73-1/XC73-1-1-451-5-eng.pdf" target="_blank" rel="noopener noreferrer">Commons ethics committee report</a> (April 2026)</li>
+            <li><a href="https://thelogic.co/news/exclusive/brookfields-leaked-maple-fund-pitch/" target="_blank" rel="noopener noreferrer">The Logic</a>: the 2024 Maple Fund pitch</li>
+            <li><a href="https://www.advisor.ca/industry-news/cpp-investments-brookfield-launch-50b-fund-to-invest-in-big-canadian-projects/" target="_blank" rel="noopener noreferrer">The Canadian Press via Advisor.ca</a>: the Maple Fund launch (September 15, 2026)</li>
+            <li><a href="https://www.pm.gc.ca/en/node/54320" target="_blank" rel="noopener noreferrer">Prime Minister&rsquo;s Office</a>: the home retrofit and heat pump program</li>
+            <li><a href="https://www.bnnbloomberg.ca/business/company-news/2026/11/09/psp-investments-buying-50-stake-in-enercare-for-16-billion/" target="_blank" rel="noopener noreferrer">BNN Bloomberg</a>: PSP Investments buys 50% of Enercare (November 9, 2026)</li>
+            <li><a href="https://thelogic.co/?p=2136071" target="_blank" rel="noopener noreferrer">The Logic</a>: Canada&rsquo;s nuclear strategy and the CANDU</li>
+            <li><a href="https://www.thebureau.news/p/eby-briefed-for-meeting-with-vancouver" target="_blank" rel="noopener noreferrer">The Bureau</a>: the Rennie fundraiser and the Elections Canada filing</li>
+            <li><a href="https://www.pm.gc.ca/en/news/news-releases/2026/06/18/canada-and-british-columbia-forge-new-partnership-accelerate" target="_blank" rel="noopener noreferrer">Prime Minister&rsquo;s Office</a>: the Canada-B.C. condo conversion plan (June 18, 2026)</li>
+            <li><a href="https://www.ctvnews.ca/vancouver/article/liberals-shut-down-debate-over-proposed-probe-into-bc-condo-buyout-plan/" target="_blank" rel="noopener noreferrer">CTV News / The Canadian Press</a>: Liberals shut down the condo probe (July 7, 2026)</li>
+        </ul>
+        <p class="sources-label">Further reading</p>
+        <p>How Canada&rsquo;s economy came to depend on one customer is the subject of <a href="../how-did-we-get-here/index.html">How Did We Get Here?</a> How the 2026 northern plan stacks up is in <a href="../canadas-arctic/index.html">Canada Can&rsquo;t Defend Its Own Arctic</a>.</p>
+    </div>
+</article>
+
+</body>
+</html>
