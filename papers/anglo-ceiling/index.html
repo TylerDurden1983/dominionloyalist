@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Anglo Ceiling &middot; Dominion Loyalist</title>
+<meta name="description" content="Official bilingualism began as a fix for a real injustice. Fifty years on, every bilingual designation tilts the pool, the training loop has no tracked cost, and the people it was meant to protect still end up switching to English. The companion essay to the Dominion Loyalist video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+        --parchment:      #F5F0E6;
+        --parchment-dark: #EDE7D9;
+        --ink:            #1C1917;
+        --ink-light:      #44403C;
+        --burgundy:       #7B2D3E;
+        --burgundy-light: #9B3D50;
+        --border:         #C8B89A;
+        --border-light:   #DDD0BC;
+        --muted:          #78716C;
+        --muted-light:    #A8A29E;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+        background-color: var(--parchment);
+        color: var(--ink);
+        font-family: 'EB Garamond', Georgia, serif;
+        font-size: 1.15rem;
+        line-height: 1.75;
+    }
+
+    .paper-header {
+        background-color: var(--ink);
+        border-bottom: 3px solid var(--burgundy);
+        padding: 1.1rem 2rem;
+    }
+
+    .paper-header a {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted-light);
+        text-decoration: none;
+    }
+
+    .paper-header a:hover { color: var(--parchment); }
+
+    article {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 4rem 2rem 5rem;
+    }
+
+    .tag {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4.5vw, 2.75rem);
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--ink);
+        margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--ink-light);
+        margin-bottom: 1.75rem;
+    }
+
+    .byline {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        color: var(--muted);
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .video {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: var(--ink);
+        border: 1px solid var(--border);
+        margin-bottom: 0.75rem;
+    }
+
+    .video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .video-caption {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 3rem;
+    }
+
+    .video-caption a, article a { color: var(--burgundy); }
+    .video-caption a:hover, article a:hover { color: var(--burgundy-light); }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--ink);
+        margin: 2.75rem 0 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-style: italic;
+        color: var(--burgundy);
+        margin: 2rem 0 0.75rem;
+    }
+    p { margin-bottom: 1.15rem; color: var(--ink); }
+
+    .pull {
+        font-size: 1.3rem;
+        font-style: italic;
+        color: var(--burgundy);
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .sources {
+        margin-top: 3.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-light);
+        font-size: 1rem;
+        color: var(--ink-light);
+    }
+
+    .sources-label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--burgundy);
+        margin-bottom: 0.75rem;
+    }
+
+    .sources ul { padding-left: 1.2rem; margin-bottom: 1.25rem; }
+    .sources li { margin-bottom: 0.4rem; }
+
+    @media (max-width: 640px) {
+        article { padding: 2.5rem 1.5rem 3.5rem; }
+    }
+
+    @media print {
+        .paper-header, .video, .video-caption { display: none; }
+        body { background: white; }
+        article { max-width: none; padding: 0 0.25in; }
+    }
+</style>
+</head>
+
+<body>
+<div class="paper-header">
+    <a href="../../index.html#papers" target="_top">&larr; Back to Dominion Loyalist</a>
+</div>
+<article>
+    <p class="tag">Video Essay &middot; Policy</p>
+    <h1>The Anglo Ceiling</h1>
+    <p class="subtitle">Official bilingualism started as a fix for a real injustice. Over fifty years it became something else: a test that decides careers, in a public service that mostly works in English.</p>
+    <p class="byline">Dominion Loyalist &middot; November 2026</p>
+    <div class="video">
+        <iframe src="https://www.youtube-nocookie.com/embed/iH8nqvk73U4" title="The Anglo Ceiling: How Official Bilingualism Backfired" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <p class="video-caption">Watch the animated version on <a href="https://youtu.be/iH8nqvk73U4" target="_blank" rel="noopener noreferrer">YouTube</a> (10 minutes). The essay below follows the same path in writing, with a little more detail.</p>
+
+    <p>In the federal government there is a three-letter code that decides careers: C, B, C. Not the broadcaster. It means level C in reading French, B in writing, and C in speaking, where C is the highest level and A the lowest.</p>
+    <p>Since June 20, 2025, CBC is the minimum for anyone who supervises public servants in a region designated bilingual, which includes all of Ottawa. You can be the best manager in the building, with years of proven results. Without those letters, you are not getting the job.</p>
+    <p>Most of the people chasing that C will pass a test, go back to a desk where the work happens in English, and lose it within a few years. Then they will do it all again.</p>
+
+    <h2>I. A Real Problem</h2>
+    <p>Start with the 1960s, because the original complaint was legitimate. In 1965, about 9 percent of federal positions were designated bilingual. Federal services were offered in English only. Francophones made up about 21 percent of the federal workforce while they were roughly 28 percent of the population. If you were a French speaker in Quebec, your own national government did not talk to you in your own language. That is not a grievance. It is a fact.</p>
+    <p>Lester Pearson set up the Royal Commission on Bilingualism and Biculturalism in 1963. In 1966 he announced a bilingualism policy for the public service. In 1969, Pierre Trudeau passed the Official Languages Act.</p>
+    <p>The core idea made sense. A Canadian should be able to deal with their federal government in English or in French. We have no quarrel with that principle; service to citizens in their own language is worth defending. The question, as so often in Canada, is what got built on top of it: policies, directives, position profiles, second language tests, retests, and now CBC for every supervisor in the capital.</p>
+
+    <h2>II. The Pendulum</h2>
+    <h3>Who is already bilingual</h3>
+    <p>Here is the number that matters most, and almost nobody talks about it. In the 2021 census, 47.6 percent of francophones could hold a conversation in both official languages. For anglophones it was 9 percent. Outside Quebec, bilingualism is falling: 10.3 percent in 2001, 9.5 percent in 2021.</p>
+    <p>Think about what that does. Every time a federal job is designated bilingual, the pool of people who already qualify is about five times more likely to be francophone. Nobody has to discriminate. The rules do it for you.</p>
+    <p>A francophone in Gatineau picks up English for free, without years of study: from work, from television, from living on an English-speaking continent, on a planet where English is the dominant international language. An anglophone in Kanata has to get French in a classroom, then keep it alive in an office that runs in English.</p>
+    <h3>The executive climb</h3>
+    <p>Now look at the executive ranks. In 1983, 20.4 percent of federal executives had French as their first official language. In 1993 it was 23.3 percent; in 2003, 27.2; in 2011, 30.1. By March 2024 it was 33.2 percent.</p>
+    <p>Francophones are about one in five Canadians, and about 28 percent of the whole public service. At the executive level, it is one in three. The base stayed flat. The top kept climbing.</p>
+    <p>Treasury Board&rsquo;s line is that francophone representation reflects the population. Across the whole service, broadly, that is close. In the rooms where decisions get made, it is not.</p>
+    <p class="pull">Nobody has to discriminate. The rules do it for you.</p>
+    <h3>The rope tightens</h3>
+    <p>The June 2025 change raised the minimum for supervisors of employees in bilingual regions from BBB to CBC. A BBB is intermediate French, not terribly difficult to obtain with some effort. A CBC is advanced French, a different thing entirely. Supervisors who do not meet it are grandfathered as an acquired right, but only as long as they stay in their current job. So the rule does not just block the next generation of anglophone managers. It freezes the current ones in place.</p>
+    <h3>The military runs the same system</h3>
+    <p>The Canadian Armed Forces work mostly in English day to day, yet a second language profile earns merit points on promotion boards. A Canadian Forces College paper on Air Force merit boards found that for promotion to colonel the only accepted profile was CBC, and that the board&rsquo;s own direction said the points for any single professional qualification could not exceed the points for a second language. A professional designation, capped below a language test.</p>
+    <p>DND&rsquo;s own review found that 55.4 percent of CAF members do not have the language profile required for their next rank. About 24 percent of CAF members are francophone.</p>
+    <p>On paper the system is symmetrical: francophones get points for English, anglophones for French. In practice, one group mostly gets it for free and the other has to earn it. A rule that looks neutral, with an outcome that is not.</p>
+
+    <h2>III. The Loop</h2>
+    <p>So what happens to the anglophone who needs the C? They go to language training, often full time, on full salary, while someone else covers their job. They pass the test. They go back to a team that works in English. Within a few years, the French fades.</p>
+    <p>Results have to be retested every five years. If they fail, they do not lose their job or their position; as a federal assistant deputy minister told a Commons committee in 2010, they get more training so they can pass again.</p>
+    <p class="pull">Train. Pass. Don&rsquo;t use it. Lose it. Retrain. Retest.</p>
+    <p>How much does all of that cost? Nobody knows. In 2013, the Commissioner of Official Languages said that since language training was decentralized in 2006, there was no longer any data to compare or evaluate whether it works. Back in 2005, a Commons committee had already been told that too many people lose their fluency soon after training, and that too many come out with their attitude toward French soured by months of training and repeated test failures. People lose the desire to learn the language at all, never mind keep up with the bureaucracy around it.</p>
+    <h3>The reward</h3>
+    <p>The bilingualism bonus is $800 a year, taxable. It was created in 1977 as a temporary measure and has never been indexed. Adjusted for inflation it would be well over $3,600. For an anglophone, that is no incentive at all. For a francophone who was already bilingual, it is $800 a year for a skill they had walking in the door.</p>
+    <h3>Who it fails</h3>
+    <p>Anglophones, obviously. But francophones too. Since the 2023 amendments, public servants in bilingual regions have a legal right to be supervised in the official language of their choice. If a manager&rsquo;s French is a test pass that is fading, that manager slides back into English the moment a conversation gets complicated, and the francophone employee is back to using the English they very likely already had. The policy shortchanges the very people it was supposed to help.</p>
+
+    <h2>IV. You Can&rsquo;t Legislate Usefulness</h2>
+    <p>Underneath all of this is a simple truth. People learn a language, and keep it, when it is useful to them. Not when it is required.</p>
+    <p>Look at Ireland. Irish has been compulsory in schools for about a century. In the 2022 census, nearly 1.9 million people said they could speak some Irish. The number who speak it daily outside of school is about 72,000, and only 10 percent of Irish speakers say they speak it very well. A hundred years of mandatory instruction, and the country runs in English.</p>
+    <p>Look at Denmark. No law makes Danes learn English, and about 90 percent of them say they can hold a conversation in it anyway. Small country, global language, subtitled television. It is useful, so they learn it.</p>
+    <h3>The other side</h3>
+    <p>We have to be honest about the other side of this. Force does work, when it points the same way as usefulness. Louisiana&rsquo;s 1921 constitution made English the language of its public schools, and children were punished for speaking French; today only about 77,000 people there still speak Louisiana French. Quebec&rsquo;s Bill 101, in 1977, made French the language of work in Quebec, and it worked, because inside Quebec French became the language you needed to get paid. Most Quebecers already spoke it, so it was not a hard push.</p>
+    <p>That is the lesson. Law can make a language useful in a place. It cannot make it useful in an office where the work, the email, the software and the whole continent run in English. In Ottawa, the federal government is trying to legislate usefulness into a language that most of its daily work does not need. And it shows.</p>
+
+    <h2>V. The Fix</h2>
+    <p>Keep the principle. A Canadian should be served by their government in English or in French. Those are the languages of the two founding peoples of Canada, and the culture is worth defending and promoting.</p>
+    <p>But tie bilingual requirements to the actual work:</p>
+    <p><strong>1. Front-line service to the public</strong>, where a citizen is entitled to be served in their language.</p>
+    <p><strong>2. Offices in Quebec, New Brunswick</strong> and the communities where the public really is bilingual.</p>
+    <p><strong>3. Teams that genuinely work in French</strong>, whose supervisors need to supervise them in French.</p>
+    <p><strong>4. Not a blanket gate on every supervisor in the capital region</strong> just because it is simpler to apply universally.</p>
+    <p>Put the money into interpretation and translation tools, which today are better than anything that has existed before. And stop letting a language score outweigh the qualifications that actually make someone good at the job.</p>
+    <h3>The defenders&rsquo; case</h3>
+    <p>The people who defend the current system will say that language rights on paper mean nothing if managers cannot deliver them, and that the only way to guarantee service and supervision in French is to require French at the top. That is a real argument. But after fifty years, the evidence says the current approach is not delivering that either. It is producing a test, not a bilingual public service.</p>
+    <p class="pull">Official bilingualism was meant to open doors. For a lot of capable Canadians, it has become the door.</p>
+    <p>That is worth fixing.</p>
+
+    <div class="sources">
+        <p class="sources-label">Sources</p>
+        <ul>
+            <li><a href="https://www.canada.ca/en/department-national-defence/maple-leaf/defence/2026/07/official-languages-at-work.html" target="_blank" rel="noopener noreferrer">DND Maple Leaf</a>: supervisor requirement raised from BBB to CBC, in force June 20, 2025</li>
+            <li><a href="https://www.canada.ca/en/treasury-board-secretariat/services/values-ethics/official-languages/workplace.html" target="_blank" rel="noopener noreferrer">Treasury Board Secretariat</a>: Official languages in the workplace (acquired rights)</li>
+            <li><a href="https://lop.parl.ca/en/researchpublications/201729e" target="_blank" rel="noopener noreferrer">Library of Parliament</a>: The Federal Public Service Bilingualism Bonus (1965 figures, bonus history)</li>
+            <li><a href="https://www.canada.ca/en/treasury-board-secretariat/services/terms-conditions-employment/bilingualism-bonus.html" target="_blank" rel="noopener noreferrer">Treasury Board Secretariat</a>: Bilingualism bonus</li>
+            <li><a href="https://www12.statcan.gc.ca/census-recensement/2021/as-sa/98-200-X/2021013/98-200-X2021013-eng.cfm" target="_blank" rel="noopener noreferrer">Statistics Canada</a>: English&ndash;French bilingualism in Canada, 2021 census</li>
+            <li><a href="https://environicsanalytics.com/resources/blogs/ea-blog/2022/08/17/census-2021-canadas-linguistic-diversity" target="_blank" rel="noopener noreferrer">Environics Analytics</a>: Census 2021 bilingualism by mother tongue</li>
+            <li><a href="https://www.canada.ca/en/treasury-board-secretariat/services/innovation/human-resources-statistics/demographic-snapshot-federal-public-service-2024.html" target="_blank" rel="noopener noreferrer">Treasury Board Secretariat</a>: Demographic Snapshot of Canada&rsquo;s Public Service, 2024</li>
+            <li><a href="https://www.tbs-sct.canada.ca/res/stats/images/demo11-12-eng.html" target="_blank" rel="noopener noreferrer">Treasury Board Secretariat</a>: executives by first official language, 1983 to 2011</li>
+            <li><a href="https://apex.gc.ca/wp-content/uploads/2024/09/EX-community-March-2024.pdf" target="_blank" rel="noopener noreferrer">APEX</a>: the EX community by first official language, March 2024</li>
+            <li><a href="https://www.canada.ca/en/treasury-board-secretariat/corporate/transparency/briefing-documents-treasury-board-canada-secretariat/parliamentary-committee/president-treasury-board-ollo-official-languages-2022-23-december-2024.html" target="_blank" rel="noopener noreferrer">Treasury Board Secretariat</a>: briefing on francophone representation (December 2024)</li>
+            <li><a href="https://www.cfc.forces.gc.ca/papers/csc/csc46/sp/Vos.pdf" target="_blank" rel="noopener noreferrer">Canadian Forces College</a>: second language profiles and RCAF merit boards</li>
+            <li><a href="https://www.canada.ca/en/department-national-defence/corporate/reports-publications/audit-evaluation/caf-official-language-review.html" target="_blank" rel="noopener noreferrer">National Defence</a>: CAF Official Languages Review</li>
+            <li><a href="https://www.ourcommons.ca/documentviewer/en/45-1/NDDN/meeting-30/evidence" target="_blank" rel="noopener noreferrer">House of Commons, National Defence committee</a>: CAF francophone share</li>
+            <li><a href="https://www.canada.ca/en/news/archive/2013/09/graham-fraser-calls-increased-accountability-language-training-reporting-federal-public-service.html" target="_blank" rel="noopener noreferrer">Commissioner of Official Languages</a>: language training reporting (2013)</li>
+            <li><a href="https://ourcommons.ca/Content/Committee/381/LANG/Evidence/EV1591173/LANGEV13-E.PDF" target="_blank" rel="noopener noreferrer">House of Commons, Official Languages committee</a>: evidence on language training (2005)</li>
+            <li><a href="https://openparliament.ca/committees/official-languages/40-3/51/?page=12" target="_blank" rel="noopener noreferrer">House of Commons, Official Languages committee</a>: retesting and retraining (2010)</li>
+            <li><a href="https://www.cso.ie/en/releasesandpublications/ep/p-cpsr/censusofpopulation2022-summaryresults/educationandirishlanguage" target="_blank" rel="noopener noreferrer">Central Statistics Office, Ireland</a>: Census 2022, the Irish language</li>
+            <li><a href="https://www.irishtimes.com/ireland/2023/05/30/census-2022-number-of-irish-speakers-increases-but-only-10-can-speak-it-very-well" target="_blank" rel="noopener noreferrer">The Irish Times</a>: only 10% of Irish speakers speak it very well</li>
+            <li><a href="https://apples.journal.fi/article/download/161347/122211/460336" target="_blank" rel="noopener noreferrer">Apples journal</a>: Danish English competence (Eurobarometer 2024)</li>
+            <li><a href="https://64parishes.org/?p=38854" target="_blank" rel="noopener noreferrer">64 Parishes</a>: Louisiana&rsquo;s English-only schools and the French language</li>
+        </ul>
+        <p class="sources-label">Further reading</p>
+        <p>Who actually lives in Canada, and where they settled: <a href="../where-canadians-settled/index.html">Who Settled Where in Canada?</a> For the deeper split between the two founding traditions and the American one, see <a href="../why-is-canada-so-different/index.html">Why Is Canada So Different From America?</a></p>
+    </div>
+</article>
+</body>
+</html>
