@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papers &amp; Essays · Dominion Loyalist</title>
+    <meta name="description" content="A Burkean political project for Canada — in defence of the Crown, Parliament, and the Westminster constitutional tradition, and in search of a politics between the Conservative and Liberal parties.">
+    <link rel="icon" type="image/svg+xml" href="../public/dominion-loyalist-shield.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Lilita+One&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --parchment:      #F5F0E6;
+            --parchment-dark: #EDE7D9;
+            --ink:            #1C1917;
+            --ink-light:      #44403C;
+            --burgundy:       #7B2D3E;
+            --burgundy-light: #9B3D50;
+            --border:         #C8B89A;
+            --border-light:   #DDD0BC;
+            --muted:          #78716C;
+            --muted-light:    #A8A29E;
+        }
+
+        html { font-size: 16px; scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--parchment);
+            color: var(--ink);
+            font-family: 'EB Garamond', Georgia, serif;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── HEADER ── */
+        header {
+            background-color: var(--ink);
+            border-bottom: 3px solid var(--burgundy);
+            padding: 0 2rem;
+        }
+
+        .header-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 0;
+        }
+
+        .site-title {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--parchment);
+            letter-spacing: 0.02em;
+            text-decoration: none;
+        }
+
+        .site-title span { color: var(--burgundy-light); }
+
+        nav { display: flex; gap: 2rem; }
+
+        nav a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted-light);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--parchment); }
+
+        /* ── HERO ── */
+        .hero {
+            border-bottom: 1px solid var(--border);
+            padding: 5rem 2rem 4rem;
+        }
+
+        .hero-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+        }
+
+        .hero-text { flex: 1; min-width: 0; }
+
+        .hero-shield {
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .hero-shield .hero-arms {
+            width: 240px;
+            height: auto;
+            filter: drop-shadow(0 6px 24px rgba(0,0,0,0.22));
+            transition: filter 0.3s ease;
+        }
+
+        .hero-shield .hero-arms:hover {
+            filter: drop-shadow(0 10px 32px rgba(0,0,0,0.32));
+        }
+
+        .hero-shield-caption {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted-light);
+            text-align: center;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--burgundy);
+        }
+
+        .hero-body {
+            font-size: 1.2rem;
+            color: var(--ink-light);
+            line-height: 1.8;
+        }
+
+        /* ── DIVIDER ── */
+        .ornamental-divider {
+            text-align: center;
+            color: var(--border);
+            font-size: 1.1rem;
+            letter-spacing: 0.6em;
+            padding: 2.5rem 0;
+        }
+
+        /* ── PAPERS SECTION ── */
+        .papers { padding: 0 2rem 6rem; }
+
+        .papers-inner { max-width: 900px; margin: 0 auto; }
+
+        .section-heading {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        /* ── PAPER CARD ── */
+        .paper-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-left: 4px solid var(--burgundy);
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 2rem;
+            transition: box-shadow 0.15s;
+        }
+
+        .paper-card:hover {
+            border-color: var(--border);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .paper-meta { flex: 1; }
+
+        .paper-tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--ink);
+            margin-bottom: 0.4rem;
+        }
+
+        .paper-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink-light);
+            margin-bottom: 0.75rem;
+        }
+
+        .paper-abstract {
+            font-size: 1rem;
+            color: var(--ink-light);
+            line-height: 1.65;
+        }
+
+        .paper-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1.15rem;
+            border: 1px solid;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            transition: all 0.15s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--burgundy);
+            color: white;
+            border-color: var(--burgundy);
+        }
+
+        .btn-primary:hover {
+            background: var(--burgundy-light);
+            border-color: var(--burgundy-light);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--ink);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover { border-color: var(--ink-light); }
+
+        /* ── FORTHCOMING PLACEHOLDER ── */
+        .forthcoming {
+            text-align: center;
+            padding: 4rem 2rem;
+            border: 1px dashed var(--border);
+            color: var(--ink-light);
+        }
+
+        .forthcoming-ornament {
+            font-size: 1.75rem;
+            color: var(--border);
+            margin-bottom: 1.25rem;
+        }
+
+        .forthcoming p { font-style: italic; font-size: 1.2rem; }
+
+        .forthcoming-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted-light);
+            margin-top: 0.6rem;
+            font-style: normal;
+        }
+
+        /* ── MODAL ── */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(28, 25, 23, 0.72);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .modal-overlay.open { display: flex; }
+
+        .modal {
+            background: var(--parchment);
+            border: 1px solid var(--border);
+            max-width: 840px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.3;
+        }
+
+        .modal-author {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--ink-light);
+            margin-top: 0.25rem;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--muted);
+            font-size: 1.5rem;
+            line-height: 1;
+            padding: 0.2rem 0.4rem;
+            flex-shrink: 0;
+            transition: color 0.15s;
+        }
+
+        .modal-close:hover { color: var(--ink); }
+
+        .modal-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-light);
+            padding: 0 2rem;
+            flex-shrink: 0;
+        }
+
+        .modal-tab {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.75rem 0;
+            margin-right: 2rem;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            color: var(--muted);
+            background: none;
+            transition: color 0.15s, border-color 0.15s;
+        }
+
+        .modal-tab.active {
+            color: var(--burgundy);
+            border-bottom-color: var(--burgundy);
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            flex: 1;
+            padding: 0;
+        }
+
+        .modal-body iframe {
+            width: 100%;
+            height: 65vh;
+            border: none;
+            display: block;
+        }
+
+        .modal-about {
+            padding: 2rem;
+            display: none;
+        }
+
+        .modal-about p {
+            color: var(--ink-light);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .modal-about a {
+            color: var(--burgundy);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .modal-about .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ── MEDIA SECTION ── */
+        .media { padding: 0 2rem 6rem; }
+
+        .media-inner { max-width: 900px; margin: 0 auto; }
+
+        .media-intro {
+            font-size: 1.05rem;
+            color: var(--ink-light);
+            margin: -0.75rem 0 2rem;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.75rem;
+        }
+
+        .video-card {
+            background: white;
+            border: 1px solid var(--border-light);
+            border-top: 4px solid var(--burgundy);
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.15s;
+        }
+
+        .video-card:hover {
+            border-color: var(--border);
+            border-top-color: var(--burgundy);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .video-frame {
+            position: relative;
+            aspect-ratio: 16 / 9;
+            background: var(--ink);
+            overflow: hidden;
+        }
+
+        .video-frame button {
+            all: unset;
+            position: absolute;
+            inset: 0;
+            cursor: pointer;
+        }
+
+        .video-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.2s;
+        }
+
+        .video-frame button:hover img { opacity: 0.88; }
+
+        .video-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 64px;
+            height: 64px;
+            margin: -32px 0 0 -32px;
+            border-radius: 50%;
+            background: rgba(28, 25, 23, 0.78);
+            border: 2px solid var(--parchment);
+            transition: background 0.15s;
+        }
+
+        .video-play::after {
+            content: '';
+            position: absolute;
+            left: 25px;
+            top: 19px;
+            border-style: solid;
+            border-width: 13px 0 13px 21px;
+            border-color: transparent transparent transparent var(--parchment);
+        }
+
+        .video-frame button:hover .video-play,
+        .video-frame button:focus-visible .video-play { background: var(--burgundy); }
+
+        .video-duration {
+            position: absolute;
+            right: 0.6rem;
+            bottom: 0.6rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--parchment);
+            background: rgba(28, 25, 23, 0.8);
+            padding: 0.15rem 0.45rem;
+        }
+
+        .video-frame iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .video-body .paper-title { font-size: 1.2rem; }
+
+        .video-body .paper-abstract { font-size: 0.98rem; margin-bottom: 1.1rem; flex: 1; }
+
+        .video-links {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 640px) {
+            .media { padding: 0 1.5rem 4rem; }
+            .media-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── PRINCIPLES SECTION ── */
+        .principles {
+            padding: 4rem 2rem 5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .principles-inner { max-width: 900px; margin: 0 auto; }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-top: 0;
+        }
+
+        .principle {
+            border-top: 3px solid var(--burgundy);
+            padding-top: 1.25rem;
+        }
+
+        .principle-heading {
+            font-family: 'EB Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 0.6rem;
+        }
+
+        .principle p {
+            font-size: 1rem;
+            color: var(--ink-light);
+            line-height: 1.7;
+        }
+
+        /* ── ABOUT SECTION ── */
+        .about {
+            background: var(--parchment-dark);
+            border-top: 1px solid var(--border-light);
+            border-bottom: 1px solid var(--border-light);
+            padding: 4rem 2rem;
+        }
+
+        .about-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 1.25rem;
+        }
+
+        .about p {
+            color: var(--ink-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .about p:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--ink);
+            border-top: 3px solid var(--burgundy);
+            padding: 2.25rem 2rem;
+            text-align: center;
+        }
+
+        .footer-inner { max-width: 900px; margin: 0 auto; }
+
+        footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        footer a { color: var(--muted-light); text-decoration: none; }
+        footer a:hover { color: var(--parchment); }
+
+        footer .footer-divider {
+            color: var(--muted);
+            margin: 0 0.5rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 720px) {
+            .hero-inner {
+                flex-direction: column-reverse;
+                gap: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-shield .hero-arms { width: 170px; }
+
+            .hero-body { margin: 0 auto; }
+        }
+
+        @media (max-width: 640px) {
+            .paper-card { flex-direction: column; }
+
+            .paper-actions {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .btn { flex: 1; }
+
+            nav { gap: 1.25rem; }
+
+            .hero { padding: 3rem 1.5rem 2.5rem; }
+
+            .papers { padding: 0 1.5rem 4rem; }
+        }
+        .papers-page { padding-top: 4rem; }
+    </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+    <div class="header-inner">
+        <a href="../index.html" class="site-title">Dominion <span>Loyalist</span></a>
+        <nav>
+            <a href="../index.html#media">Media</a>
+            <a href="index.html" aria-current="page">Papers</a>
+            <a href="../index.html#principles">Principles</a>
+            <a href="../index.html#about">About</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ── PAPERS ── -->
+<section class="papers papers-page" id="papers">
+    <div class="papers-inner">
+        <p class="section-heading">Papers &amp; Essays</p>
+
+        <div id="papers-list"></div>
+
+        <div class="forthcoming" id="forthcoming-notice">
+            <div class="forthcoming-ornament" aria-hidden="true">&#10070;</div>
+            <p>Further papers forthcoming.</p>
+            <p class="forthcoming-sub">This repository is presently in preparation.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ── MODAL ── -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+        <div class="modal-header">
+            <div>
+                <div class="modal-title" id="modal-title"></div>
+                <div class="modal-author" id="modal-author"></div>
+            </div>
+            <button class="modal-close" id="modal-close" aria-label="Close reader">&times;</button>
+        </div>
+        <div class="modal-tabs">
+            <button class="modal-tab active" data-tab="read">Read Online</button>
+            <button class="modal-tab" data-tab="about">Details &amp; Download</button>
+        </div>
+        <div class="modal-body">
+            <iframe id="modal-frame" title="Paper reader" allowfullscreen></iframe>
+            <div class="modal-about" id="modal-about">
+                <p id="modal-abstract"></p>
+                <p id="modal-download-wrap"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-inner">
+        <p>
+            Dominion Loyalist
+            <span class="footer-divider">&mdash;</span>
+            <a href="https://dominionloyalist.ca">dominionloyalist.ca</a>
+        </p>
+        <p style="margin-top:0.4rem;">Published in the Dominion of Canada</p>
+    </div>
+</footer>
+
+<script>
+    /*
+     * To add a paper, append an object to the `papers` array below.
+     *
+     * Fields:
+     *   title    {string}  — full paper title
+     *   author   {string}  — author name(s)
+     *   year     {string}  — publication year (optional)
+     *   tag      {string}  — category label shown above the title (optional)
+     *   abstract {string}  — short abstract shown on the card and in modal
+     *   htmlUrl  {string}  — URL for the inline reader iframe (optional)
+     *   pdfUrl   {string}  — URL for PDF download link (optional)
+     *
+     * The "Read online" button appears only when htmlUrl is set.
+     * The "Download PDF" button appears only when pdfUrl is set.
+     */
+    const papers = [
+        {
+            title:    "Canada Built One Railway. Then Gave Up.",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Policy",
+            abstract: "In 1885 Canada finished a railway across the continent in under five years, then stopped building trunks. A century later the main lines are still mostly single track and most of the country has never had a way in. This companion essay traces the prairie spur boom, the Alaska Highway the U.S. Army built, Rohmer's Mid-Canada Corridor and fifty years of a Mackenzie Valley pipeline, then lays out six rail-based economic corridors, the honest costs, and who could build them.",
+            htmlUrl:  "canada-built-one-railway/index.html",
+        },
+        {
+            title:    "The Anglo Ceiling",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Policy",
+            abstract: "Official bilingualism began as a fix for a real injustice. Fifty years on, almost half of francophones are bilingual against 9% of anglophones, federal executives have gone from 1 in 5 francophone to 1 in 3, every supervisor in Ottawa now needs a CBC, and the training loop has no tracked cost. This companion essay looks at who the system actually fails, why you can't legislate usefulness, and how to tie the requirement to the actual work.",
+            htmlUrl:  "anglo-ceiling/index.html",
+        },
+        {
+            title:    "Poilievre's 87% Had a $999 Cover Charge",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Policy",
+            abstract: "Pierre Poilievre passed his leadership review with 87.4%, in a room of about 2,400 delegates who paid $999 each to vote in Calgary in January. This companion essay holds the Leader of the Opposition to the same standard as the Prime Minister: who got a say, why eight MPs have left his caucus, who has access through Jenni Byrne's firms, what happened in Brantford, and what a party that wants to govern should fix.",
+            htmlUrl:  "poilievre-review/index.html",
+        },
+        {
+            title:    "Your PM Has a Second Paycheque",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Policy",
+            abstract: "Mark Carney still gets paid when Brookfield does well: stock options and a cut of fund profits, held in a blind trust. This companion essay looks at the screen that names 103 of Brookfield's roughly 2,000 companies and is run by the Prime Minister's own staff, how often Brookfield keeps showing up, what Parliament's ethics committee recommended, and what would actually fix it.",
+            htmlUrl:  "carney-brookfield/index.html",
+        },
+        {
+            title:    "Canada Can't Defend Its Own Arctic",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Policy",
+            abstract: "In 2007 Ottawa promised the navy a station at Nanisivik. In 2026 it was shut down, $110 million later. Now there is a $40 billion plan for the North: airfields, hubs, radar, a port at Grays Bay, submarines. This companion essay looks at what it buys, when, and the three holes still in the map: Churchill, the eastern gate, and soldiers who actually live there.",
+            htmlUrl:  "canadas-arctic/index.html",
+        },
+        {
+            title:    "Who Settled Where in Canada?",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 History",
+            abstract: "Four census maps, 1851, 1921, 1971 and 2021, showing where Canada's peoples actually settled. This companion essay to the video follows the Irish up the Ottawa Valley, the Germans of Waterloo and Lunenburg, the Ukrainian blocs of the prairies, the postwar Italians and the new rings around Toronto and Vancouver, and why the old clusters still show up 170 years later.",
+            htmlUrl:  "where-canadians-settled/index.html",
+        },
+        {
+            title:    "Canada Was Warned About Immigration. It Did It Anyway.",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Policy",
+            abstract: "In 2022 Ottawa was warned that housing had not kept up with population growth. The targets went up anyway, and the 2026 budget plans for up to 1.2 million people admitted, made permanent, or claiming asylum in a single year. This companion essay to the video follows the unwritten deal Canadians made on immigration, the back doors that broke it, who lobbied for it, and what the data actually shows, both columns.",
+            htmlUrl:  "canada-was-warned/index.html",
+        },
+        {
+            title:    "Why Is Canada So Different From America?",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 History",
+            abstract: "Two hundred and forty years ago, one set of British colonists chose revolution and another chose loyalty. This companion essay to the video follows the split from the Loyalists and the War of 1812 to the Crown that almost never acts, the rock and rails that pushed Canada to lean on the state, the twenty years after 1945 when the old British Canada was taken apart, and what is left of it now.",
+            htmlUrl:  "why-is-canada-so-different/index.html",
+        },
+        {
+            title:    "How Did We Get Here? The Story of the Canadian Economy",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 History",
+            abstract: "Canada sells three quarters of its exports to one customer. This companion essay to the video follows how we got here: the pine that floated the Royal Navy, North America's first oil well, the National Policy and the CPR, the war factories, the Avro Arrow, the Auto Pact, free trade and the brain drain. Again and again Canada has been blessed by good fortune or foresight, and again and again the advantage has been hollowed out, from outside and from within.",
+            htmlUrl:  "how-did-we-get-here/index.html",
+        },
+        {
+            title:    "What Is a Canadian?",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Video Essay \u00b7 Episode 1",
+            abstract: "Before the modern immigration era, nearly every Canadian traced back to one small circle around the North Sea and the English Channel. From the Angles and Saxons to the Normans, New France, the Loyalists and Confederation, this companion essay to episode 1 of the video series follows how those cousins became a new people, and why being Canadian is an inheritance anyone can join.",
+            htmlUrl:  "what-is-a-canadian/index.html",
+        },
+        {
+            title:    "A Young Country with Old Roots: On the Civilizational Foundations of Canada",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "History & Identity",
+            abstract: "Canada is often described as a young country — accurate in a narrow legal sense, misleading in a civilizational one. This paper recovers the Anglo-Norman synthesis, the North Sea world, and the Atlantic-facing provinces of France that formed Canada's peoples, and argues that Canadian identity is a civilizational continuity to be received, stewarded, and passed on, not invented anew by each generation.",
+            htmlUrl:  "canada-origins/index.html",
+        },
+        {
+            title:    "The Lords Commander: Restoring Functional Sovereignty to the Canadian Senate",
+            author:   "Dominion Loyalist",
+            year:     "2026",
+            tag:      "Constitutional Framework — Senate Reform",
+            abstract: "A structural reformation of the upper chamber drawing on the feudal Lords, the Canadian militia tradition, and the Crown as the organizing principle of the Canadian state. Senate seats would be held by Lords Commander — individuals exercising command authority over formations of the Canadian Armed Forces Reserve.",
+            htmlUrl:  "lords-commander/index.html",
+        },
+        // Example (uncomment to test):
+        // {
+        //     title:    "The Reserve Powers of the Crown in Canada",
+        //     author:   "A. N. Author",
+        //     year:     "2026",
+        //     tag:      "Vice-Regal Prerogative",
+        //     abstract: "An examination of the circumstances in which the Governor General may lawfully refuse royal assent or decline to follow ministerial advice.",
+        //     htmlUrl:  "reserve-powers/index.html",
+        //     pdfUrl:   "papers/reserve-powers/reserve-powers.pdf",
+        // },
+    ];
+
+    /* ── Render paper cards ── */
+    function renderPapers() {
+        const list   = document.getElementById('papers-list');
+        const notice = document.getElementById('forthcoming-notice');
+
+        if (papers.length === 0) {
+            list.innerHTML    = '';
+            notice.style.display = 'block';
+            return;
+        }
+
+        notice.style.display = 'none';
+        list.innerHTML = papers.map((p, i) => `
+            <div class="paper-card">
+                <div class="paper-meta">
+                    <p class="paper-tag">${escHtml(p.tag || 'Constitutional Theory')}</p>
+                    <p class="paper-title">${escHtml(p.title)}</p>
+                    <p class="paper-author">${escHtml(p.author)}${p.year ? ' &mdash; ' + escHtml(p.year) : ''}</p>
+                    <p class="paper-abstract">${escHtml(p.abstract || '')}</p>
+                </div>
+                <div class="paper-actions">
+                    ${p.htmlUrl ? `<button class="btn btn-primary" onclick="openModal(${i})">Read online</button>` : ''}
+                    ${p.pdfUrl  ? `<a class="btn btn-secondary" href="${escAttr(p.pdfUrl)}" target="_blank" rel="noopener noreferrer">Download PDF</a>` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    /* ── Modal ── */
+    function openModal(index) {
+        const p = papers[index];
+        document.getElementById('modal-title').textContent  = p.title;
+        document.getElementById('modal-author').textContent = p.author + (p.year ? ' — ' + p.year : '');
+        document.getElementById('modal-abstract').textContent = p.abstract || '';
+        document.getElementById('modal-download-wrap').innerHTML = p.pdfUrl
+            ? `<a class="download-link btn btn-secondary" href="${escAttr(p.pdfUrl)}" target="_blank" rel="noopener noreferrer">Download PDF</a>`
+            : '';
+
+        if (p.htmlUrl) {
+            document.getElementById('modal-frame').src = p.htmlUrl;
+            switchTab('read');
+        } else {
+            switchTab('about');
+        }
+
+        document.getElementById('modal-overlay').classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('modal-overlay').classList.remove('open');
+        document.getElementById('modal-frame').src = '';
+        document.body.style.overflow = '';
+    }
+
+    function switchTab(name) {
+        document.querySelectorAll('.modal-tab').forEach(t => {
+            t.classList.toggle('active', t.dataset.tab === name);
+        });
+        document.getElementById('modal-frame').style.display   = name === 'read'  ? 'block' : 'none';
+        document.getElementById('modal-about').style.display   = name === 'about' ? 'block' : 'none';
+    }
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+
+    document.getElementById('modal-overlay').addEventListener('click', function (e) {
+        if (e.target === this) closeModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
+    });
+
+    document.querySelectorAll('.modal-tab').forEach(tab => {
+        tab.addEventListener('click', () => switchTab(tab.dataset.tab));
+    });
+
+    /* ── Utilities ── */
+    function escHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function escAttr(str) {
+        return String(str).replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    renderPapers();
+</script>
+
+</body>
+</html>
